@@ -1,21 +1,31 @@
-import useLunar from "@/components/useCountLunar";
+import useLunar from "@/components/useLunar";
 import useZodiacAge from "@/components/useZodiacAge";
 
 import React from "react";
 import { Text, View } from "react-native";
 
-const Index = () => {
+const HomeScreen = () => {
   const { gregorian, lunar, zodiac } = useLunar();
-  const { zodiacList } = useZodiacAge();
+  const zodiacAges = useZodiacAge();
 
   return (
     <View>
       <Text>当前日期：{gregorian}</Text>
       <Text>当前农历日期：{lunar}</Text>
       <Text>当前农历生肖：{zodiac}</Text>
-      <Text>{zodiacList} </Text>
+
+      <View style={{ padding: 20 }}>
+        <Text style={{ fontSize: 18, fontWeight: "bold", marginBottom: 10 }}>
+          生肖年龄列表：
+        </Text>
+        {Object.entries(zodiacAges).map(([zodiac, ages]) => (
+          <Text key={zodiac}>
+            {zodiac}：{ages.join(", ")}
+          </Text>
+        ))}
+      </View>
     </View>
   );
 };
 
-export default Index;
+export default HomeScreen;

@@ -1,4 +1,4 @@
-import useLunar from "@/components/useCountLunar";
+import useLunar from "@/components/useLunar";
 
 // 生肖顺序
 const zodiacList = [
