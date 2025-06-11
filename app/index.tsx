@@ -9,12 +9,18 @@ import { Text, View } from "react-native";
 const HomeScreen = () => {
   const { gregorian, lunar, zodiac } = useLunar();
   const zodiacAges = useZodiacAge();
+  const agesOfTiger = zodiacAges["虎"];
+  console.log("虎", agesOfTiger);
 
   return (
-    <View>
+    <View style={{ gap: 10 }}>
       <Text>当前日期：{gregorian}</Text>
       <Text>当前农历日期：{lunar}</Text>
       <Text>当前农历生肖：{zodiac}</Text>
+
+      <Text style={{ color: "red" }}>
+        查询指定生肖年龄【虎】：{agesOfTiger?.join(",")}
+      </Text>
 
       <View style={{ padding: 20 }}>
         <Text style={{ fontSize: 18, fontWeight: "bold", marginBottom: 10 }}>
