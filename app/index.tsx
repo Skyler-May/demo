@@ -1,7 +1,7 @@
 // import useLunar from "@/components/useLunar";
 // import useZodiacAge from "@/components/useZodiacAge";
 
-import useLunar from "@/hooks/date/useCountLunar";
+import useLunar from "@/hooks/date/useLunar";
 import useZodiacAge from "@/hooks/date/useZodiacAge";
 import React from "react";
 import { Text, View } from "react-native";
