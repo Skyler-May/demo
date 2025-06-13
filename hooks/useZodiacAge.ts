@@ -1,4 +1,4 @@
-import useLunar from "@/hooks/date/useLunar";
+import useLunar from "@/hooks/useLunar";
 
 // 生肖顺序
 const zodiacList = [

@@ -1,10 +1,11 @@
 // import useLunar from "@/components/useLunar";
 // import useZodiacAge from "@/components/useZodiacAge";
 
-import useLunar from "@/hooks/date/useLunar";
-import useZodiacAge from "@/hooks/date/useZodiacAge";
+import useLunar from "@/hooks/useLunar";
+import useZodiacAge from "@/hooks/useZodiacAge";
+import { router } from "expo-router";
 import React from "react";
-import { Text, View } from "react-native";
+import { Button, Text, View } from "react-native";
 
 const HomeScreen = () => {
   const { gregorian, lunar, zodiac } = useLunar();
@@ -32,6 +33,12 @@ const HomeScreen = () => {
           </Text>
         ))}
       </View>
+      <Button
+        title="查看购物车"
+        onPress={() => {
+          router.push("/shopping-cart");
+        }}
+      />
     </View>
   );
 };
